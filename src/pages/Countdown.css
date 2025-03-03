@@ -1,0 +1,137 @@
+:root {
+    --smaller: .75;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    color: #333; /* Ensure the text color contrasts with the background */
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.85); /* Slightly transparent dark background for contrast */
+    padding: 40px; /* Increased padding for a more spacious feel */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
+    margin: 20px auto; /* Center with margin */
+    max-width: 1200px; /* Increased width for better readability */
+    position: relative; /* Stack correctly with z-index */
+    z-index: 2; /* Ensure it appears above the particles */
+}
+.headline {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 40px;
+}
+
+.countdown-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.flip-container {
+    display: flex;
+}
+
+.flip-card {
+    margin: 0 10px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 150px; /* Adjust width for your design */
+    height: 200px; /* Adjust height for your design */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem; /* Large font size for visibility */
+    color: #333;
+    background-color: white; /* Background color for the card */
+    border: 2px solid #333; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.flip-card-front {
+    z-index: 2; /* Show front face */
+}
+
+.flip-card-back {
+    transform: rotateY(180deg); /* Rotate back face */
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flip effect on hover */
+}
+
+.label {
+    margin-top: 10px; /* Space below the number */
+    font-size: 1.5rem; /* Smaller font size for labels */
+}
+
+.calendar-box {
+    border: 3px solid #fff; /* Keep the border white for contrast */
+    border-radius: 15px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.95); /* Make it slightly more opaque */
+    padding: 20px; /* Padding inside the calendar box */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Darker shadow for more depth */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 20px 0; /* Margin above and below */
+}
+.colon {
+    font-size: 4rem; /* Match the font size of the countdown numbers */
+    color: #000000; /* Color for the colon */
+    display: flex;
+    align-items: center; /* Center the colon vertically */
+    justify-content: center; /* Center the colon horizontally */
+    margin: 0 5px; /* Space around the colon */
+    z-index: 2;
+}
+
+/* Responsive styles */
+@media all and (max-width: 768px) {
+    .headline {
+        font-size: calc(1.5rem * var(--smaller));
+    }
+
+    .flip-card-inner {
+        width: 100px; /* Smaller width for mobile */
+        height: 150px; /* Smaller height for mobile */
+    }
+
+    .label {
+        font-size: 1rem; /* Adjust label size for mobile */
+    }
+
+    .colon {
+        font-size: 3rem; /* Adjust colon size for mobile */
+    }
+
+    .countdown-box {
+        flex-direction: column; /* Stack cards vertically on mobile */
+    }
+
+    .flip-container {
+        flex-direction: column; /* Stack flip cards vertically on mobile */
+    }
+}

@@ -1,0 +1,192 @@
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100vh; /* Use viewport height */
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 100%;
+    z-index: 0;
+}
+
+.content-container {
+    position: relative;
+    z-index: 2; /* Ensures this is above the particles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full height of the viewport */
+    color: #fff; /* White text color for visibility */
+    text-align: center; /* Center text alignment */
+    background-color: transparent;
+    pointer-events: none; /* Allow interaction with the particles */
+}
+
+.center-image {
+    max-width: 80%; /* Default for mobile */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Spacing below the image */
+    pointer-events: auto; /* Allow interactions on the image */
+}
+
+.date {
+    font-size: 50px; /* Default size for larger screens */
+    margin-top: 10px; /* Spacing above the date */
+    pointer-events: auto; /* Allow interactions on the date */
+    font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Media Query for Tablets and Small Laptops */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .center-image {
+        max-width: 60%; /* Adjust size for tablets */
+        margin-top: 40px; /* Increase margin to push it down */
+    }
+}
+
+/* Media Query for Large Screens */
+@media (min-width: 1025px) {
+    .center-image {
+        max-width: 40%; /* Smaller max width for large screens */
+        margin-top: 100px; /* More margin to push it down further */
+    }
+}
+
+/* Media Query for Mobile */
+@media (max-width: 767px) {
+    .date {
+        font-size: 30px; /* Adjust font size for mobile */
+    }
+}
+
+.second-section {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    color: #ffffff;
+    margin-top: 20px; /* Default margin for larger screens */
+    z-index: 2; /* Ensure it appears above the particles */
+    position: relative; /* Control z-index */
+    pointer-events: auto; /* Allow interaction */
+}
+
+.section-image {
+    width: 120%; /* Default for larger screens */
+    height: auto;
+    margin-right: 20px; /* Spacing between image and text */
+}
+
+.section-content {
+    flex: 1; /* Take remaining space */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: flex-end; /* Align items to the right */
+    pointer-events: auto; /* Allow interaction within this section */
+    margin-right: 40px;
+}
+
+.section-title {
+    font-size: 4rem; /* Adjust as needed */
+    margin-bottom: 10px; /* Spacing below title */
+    font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+}
+
+.section-paragraph {
+    font-size: 1.5rem; /* Adjust as needed */
+    margin-bottom: 20px; /* Spacing below paragraph */
+    font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+    text-align: right; /* Align paragraph to the right on larger screens */
+}
+
+/* Button Styles */
+.btn-1 {
+    position: relative;
+    overflow: hidden; /* Hide overflow for swipe effect */
+    background-color: white; /* Default background color */
+    color: black; /* Default text color */
+    transition: color 0.3s ease; /* Smooth text color transition */
+    z-index: 1; /* Ensure button text is above the pseudo-element */
+    padding: 10px 20px; /* Adjust padding to fit text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    width: 160px; /* Set a width that fits text */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align items vertically */
+    justify-content: center; /* Center align items horizontally */
+    font-size: 16px; /* Adjust font size if needed */
+    pointer-events: auto; /* Allow interaction with the button */
+}
+
+.arrow-icon {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.btn-1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start from the left */
+    width: 100%;
+    height: 100%;
+    background-color: #ff0000; /* Red color */
+    transition: left 0.3s ease; /* Smooth transition */
+    z-index: -1; /* Behind the text */
+}
+
+.btn-1:hover::before {
+    left: 0; /* Move to the right on hover */
+}
+
+.btn-1:hover {
+    color: white; /* Change text color on hover */
+}
+
+/* Additional mobile adjustments */
+@media (max-width: 767px) {
+    .second-section {
+        margin-top: 300px; /* Reduce gap between sections for mobile */
+        padding: 20px; /* Adjust padding for mobile */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items */
+        text-align: center; /* Center text */
+    }
+
+    .section-image {
+        width: 100%; /* Increase width for mobile to fill more space */
+        max-width: 100%; /* Allow it to fill its container */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 40px; /* Space below the image */
+        margin-left: 10px;
+    }
+
+    .section-content {
+        display: flex; /* Enable flexbox */
+        flex-direction: column; /* Arrange items in a column */
+        align-items: center; /* Center items */
+        text-align: center; /* Center text */
+        margin: 0; /* Reset margin */
+    }
+
+    .section-title,
+    .section-paragraph {
+        text-align: center; /* Ensure title and paragraph are center-aligned */
+    }
+    .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        }
+
+    .btn-1 {
+        width: auto; /* Let the button size adjust to content */
+    }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+    .section-image {
+        width: 40%; /* Keep this for large screens */
+        margin-right: 20px; /* Spacing between image and text */
+    }
+}
