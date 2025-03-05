@@ -10,7 +10,7 @@ const ParticlesBackground = () => {
     script.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
     script.async = true;
     script.onload = () => {
-      const particleCount = window.innerWidth < 768 ? 200 : 300;
+      const particleCount = window.innerWidth < 768 ? 200 : 400;
 
       window.particlesJS("particles-js", {
         particles: {
